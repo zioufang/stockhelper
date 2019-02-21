@@ -1,8 +1,10 @@
-'''
+"""
+Scraping the web for different things:
+
 get_div_df(code): get the dividend dataframe from web
 get_delist_df(year): get the delist history from web
 get_company_list_df(): get the latest company list in ASX
-'''
+"""
 
 import requests
 import re
@@ -15,16 +17,13 @@ import io
 import utils
 
 def web_table_to_df(url, row_regex, cols):
-    '''
+    """
     url: url to scrap
     row_regex: the regex pattern to get the revelant rows
     cols: column names for the dataframe
     returns: dataframe
-    '''
-    user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'
-    headers = {'User-Agent': user_agent}
-    request = requests.get(url, timeout=5, headers=headers)
-    soup = BeautifulSoup(request.text, 'lxml')
+    """
+    soup = utils.soup_scraper(url)
     
     # find all tr element
     all_tr = soup.findAll('tr')

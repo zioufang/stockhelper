@@ -1,3 +1,7 @@
+"""
+Dealing with Google Sheets API
+"""
+
 import os.path
 import pandas as pd
 import numpy as np
