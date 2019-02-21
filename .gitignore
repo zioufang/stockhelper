@@ -1,0 +1,6 @@
+*.ipynb
+.ipynb_checkpoints/
+hist_stock_data/
+token.pickle
+cred.json
+__pycache__
